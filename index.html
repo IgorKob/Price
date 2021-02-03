@@ -10,8 +10,148 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../dist/styles/style.css"> -->
-    <link rel="stylesheet" href="https://github.com/IgorKob/Price/blob/gh-pages/styles/style.css?raw=true">
-    
+    <!-- <link rel="stylesheet" href="https://github.com/IgorKob/Price/blob/gh-pages/styles/style.css?raw=true"> -->
+    <style>
+      html {
+        font-size: 16px; }
+
+      body {
+        font-family: 'Montserrat', sans-serif; }
+
+      * {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+
+      .price-wrapper {
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+      .price-item {
+        border: 3px solid black;
+        border-radius: 30px;
+        padding: 10px;
+        background-color: #fff; }
+
+      .price-item__img {
+        display: block;
+        margin: 40px auto;
+        width: 50%; }
+
+      .price-item__title {
+        text-align: center; }
+
+      .price-item__value {
+        text-align: center;
+        margin-bottom: 30px; }
+
+      .price-item__work-wrap {
+        display: grid;
+        grid-template-columns: auto auto;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        border-bottom: 2px solid black;
+        white-space: nowrap;
+        margin-bottom: 30px; }
+
+      .price-item__materials-wrap {
+        display: grid;
+        grid-template-columns: auto auto;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        border-bottom: 2px solid black;
+        margin-bottom: 30px; }
+
+      .price-item__btn {
+        display: block;
+        width: auto;
+        padding: 20px 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: #0066ff;
+        cursor: pointer; }
+        .price-item__btn:hover {
+          opacity: .8; }
+
+      .container {
+        padding: 16px;
+        text-align: center; }
+
+      .modal-price {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #474e5d;
+        padding-top: 50px; }
+
+      .modal-content {
+        margin: 5% auto 15% auto;
+        width: 80%; }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%; }
+        table caption {
+          text-align: start; }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px; }
+
+      tr:nth-child(even) {
+        background-color: #dddddd; }
+
+      .modal-table {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #474e5d;
+        padding-top: 50px; }
+
+      .price-table__wrap {
+        border: 3px solid black;
+        border-radius: 30px;
+        padding: 10px;
+        background-color: #fff;
+        position: relative; }
+
+      .price-table__close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #000; }
+        .price-table__close:hover {
+          color: #f44336;
+          cursor: pointer; }
+
+      .price-table__items-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 60px;
+        margin-bottom: 30px; }
+
+      .price-item__btn {
+        cursor: pointer; }
+
+    </style>
   </head>
   <body>
 
@@ -136,6 +276,50 @@
 
 
     <!-- <script src="./dist/js/main.js"></script> -->
-    <script src="https://github.com/IgorKob/Price/blob/gh-pages/js/main.js?raw=true"></script>
+    <!-- <script src="https://github.com/IgorKob/Price/blob/gh-pages/js/main.js?raw=true"></script> -->
+    <script>
+      const price_btn = document.getElementsByClassName('price-item__btn');
+      const price_items = document.getElementsByClassName('price-item');
+      const modal_price = document.getElementById('modal-price');
+      const modal_content = document.getElementById('modal-content');
+      const modal_table = document.getElementById('modal-table');
+      const price_table_btn = document.getElementById('price-table-btn');
+
+      window.addEventListener('click', function(event) {
+        if (event.target == modal_price) {
+          modal_content.innerHTML = '';
+          modal_price.style.display = "none";
+        }
+      })
+
+      price_table_btn.addEventListener('click', function(event) {
+          alert('Send message')
+      })
+
+      for (let i = 0; i < price_btn.length; i++) {
+          price_btn[i].addEventListener('click', function(event) {
+              if ( modal_price.style.display === "block") {
+                  modal_content.innerHTML = '';
+                  modal_price.style.display = "none";
+                  modal_table.style.display = "none";
+                  return;
+              }
+              if ( modal_price.style.display === "none" || modal_price.style.display === "") {
+                  const price_item = price_btn[i].parentNode;
+                  const el = price_item.cloneNode(true);
+                  modal_price.style.display = "block";
+                  modal_content.appendChild(el);
+                  return;
+              }
+          }) 
+        }  
+
+      function onclick_btn() {
+        if ( modal_price.style.display === "block") {
+          modal_table.style.display = "block";
+        }
+      }
+    </script>
+
   </body>
 </html>
