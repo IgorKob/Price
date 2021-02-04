@@ -19,151 +19,67 @@ price_table_btn.addEventListener('click', function(event) {
     alert('Send message')
 })
 
-for (let i = 0; i < price_btn.length; i++) {
-    price_btn[i].addEventListener('click', function(event) {
-        // debugger
-  // const el_x = this.getBoundingClientRect().left;
-  // const el_x = this.parentNode.getBoundingClientRect().left;
+// for (let i = 0; i < price_btn.length; i++) {
+//     price_btn[i].addEventListener('click', function(event) {
+//         // debugger
+//   // const el_x = this.getBoundingClientRect().left;
+//   // const el_x = this.parentNode.getBoundingClientRect().left;
   
-  // console.log(el_x);
+//   // console.log(el_x);
 
-        if ( modal_price.style.display === "block") {
-            // modal_content.innerHTML = '';
-            // modal_price.style.display = "none";
-            // modal_table.style.display = "none";
-            // return;
-        }
-        if ( modal_price.style.display === "none" || modal_price.style.display === "") {
-            // const price_item = price_btn[i].parentNode;
-            // const el = price_item.cloneNode(true);
-            // modal_price.style.display = "block";
-            // modal_content.appendChild(el);
-            // return;
-        }
-    }) 
-  }  
+//         if ( modal_price.style.display === "block") {
+//             // modal_content.innerHTML = '';
+//             // modal_price.style.display = "none";
+//             // modal_table.style.display = "none";
+//             // return;
+//         }
+//         if ( modal_price.style.display === "none" || modal_price.style.display === "") {
+//             // const price_item = price_btn[i].parentNode;
+//             // const el = price_item.cloneNode(true);
+//             // modal_price.style.display = "block";
+//             // modal_content.appendChild(el);
+//             // return;
+//         }
+//     }) 
+//   }  
  
 function onclick_btn() {
   if ( modal_price.style.display === "block") {
-    modal_table.style.display = "block";
+    // modal_table.style.display = "block";
   }
 }
 
-// 
-train.onclick = function() {
-  const el = this.parentNode;
-  const el2 = this.parentNode.cloneNode(true);
-  el2.style.opacity = "0";
-  price_items[0].parentNode.appendChild(el2);
+// /////////////////////
+for (let i = 0; i < price_btn.length; i++) {
+  price_btn[i].addEventListener('click', function(event) {
+    const el = this.parentNode;
+    const el2 = el.cloneNode(true);
+    price_items[0].parentNode.appendChild(el2);
+  
+    const el_top = el.getBoundingClientRect().top;
+    const el_x = el.getBoundingClientRect().left;
 
-  const el_top = this.parentNode.getBoundingClientRect().top;
-  const el_x = this.parentNode.getBoundingClientRect().left;
-  // debugger
-  // console.log(el_x);
-  // this.parentNode.style.animationFillMode = "forwards";
-  // this.parentNode.style.position = "absolute";
-
-  modal_price.style.display = "block";
-
-  this.parentNode.animate([
-    { left: `${el_x}px`, top: `${el_top}px`}, 
-    { position: 'fixed', left: `50%`, top: `50%`, transform: 'translate(-50%, -50%)', opacity: '0'}
-  ], {
-    duration: 2000,
-    // animationFillMode: forwards,
-    // animationFillMode: 'forwards',
-    // iterations: Infinity
-  })
-  this.parentNode.style.position = "fixed";
-  // this.parentNode.style.display = "none";
-  // this.parentNode.style.opacity = "0";
-  this.parentNode.style.zIndex = "11";
-
-  const id = setInterval(() => {
+    modal_price.style.display = "block";
+  
+    el2.animate([
+      { left: `${el_x}px`, top: `${el_top}px`}, 
+      { position: 'fixed', left: `50%`, top: `50%`, transform: 'translate(-50%, -50%)', opacity: '.8'}
+    ], {
+      duration: 800,
+    })
+    // this.parentNode.style.position = "fixed";
+    // this.parentNode.style.zIndex = "11";
+    // this.parentNode.style.display = "none";
     el.style.opacity = "0";
-  }, 2000);
-  // clearInterval(id);
+  
+    el2.style.position = "fixed";
+    el2.style.zIndex = "11";
 
-  // this.parentNode.style.left = "50%";
-  // this.parentNode.style.top = "50%";
-  // this.parentNode.style.transform = 'translate(-50%, -50%)';
-
-  // this.parentNode.style.animationFillMode = "forwards";
-
-
-  // let pos = 0;
-  // var id = setInterval(frame, 3000);
-  // function frame() {
-  //   if (pos < 1150) {
-  //     clearInterval(id);
-  //   } else {
-  //     pos++; 
-  //     this.parentNode.style.top = pos + 'px'; 
-  //     this.parentNode.style.left = pos + 'px'; 
-  //   }
-  // }
-
+    const id = setInterval(() => {
+      el2.style.display = "none";
+      // modal_table.style.display = "block";
+      // modal_table.classList.toggle('modal-table__block');  
+    }, 800);
+    // clearInterval(id);
+  })
 }
-
-
-//     train.onclick = function() {
-//       // debugger
-//       const myWidth = document.documentElement.clientWidth/2;
-//       const el_top = this.parentNode.getBoundingClientRect().top;
-//       const el_x = this.parentNode.getBoundingClientRect().left;
-//       const el_y = this.parentNode.getBoundingClientRect().right;
-//       // const el_width = this.parentNode.style.width;
-
-//       // const el_cx = myWidth - (el_y - el_x)/2;
-//       const el_cx = myWidth - (el_y - el_x)/2;
-
-//       const el = this.parentNode.cloneNode(true);
-
-//       modal_price0.style.display = "block";
-//       modal_price0.appendChild(el);
-
-
-
-// console.log(myWidth)
-
-//       let start = Date.now();
-
-//       let timer = setInterval(function() {
-//         let timePassed = Date.now() - start;
-
-//         // train.style.left = timePassed / 5 + 'px';
-//         // train.parentNode.style.position = 'absolute';
-//         // el.style.position = 'absolute';
-//         el.style.position = 'fixed';
-//         // el.style.opacity = "1";
-//         // el.style.zIndex = "1";
-
-        
-//         // train.style.width = 100+'%';
-//         // train.style.left = timePassed / myWidth + 'px';
-//         // train.parentNode.style.left = el_cx + 'px';
-//         // el.style.left = el_cx + 'px';
-//         // el.style.left = 50 + '%';
-
-//         // el.style.top = el_top + 'px';
-//         // el.style.top = 50 + '%';
-
-//         // el.style.transform = translate(-50+'%', -50+'%');
-//         // el.style.transform = 'translate(-50%, -50%)';
-
-//         // el.style = "transform: translate(-50px,0px)";
-
-//         for (let i = el_x; i < el_cx; i++) {
-//           for (let j = el_top; j <= 20; i++) {
-//             el.style.left = i + '%';
-//             el.style.top = j + '%';
-//           }
-//         }
-
-
-
-
-//         if (timePassed > 2000) clearInterval(timer);
-
-//       }, 20);
-//     }

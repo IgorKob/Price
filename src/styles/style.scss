@@ -1,12 +1,3 @@
-// Base
-// @import 'base/variables';
-// @import 'base/mixins';
-// @import 'base/base';
- 
-// Blocks
-// @import 'blocks/home/header';
-// @import 'blocks/home/footer'; 
- 
   * {
     box-sizing: border-box;
   }
@@ -24,25 +15,13 @@
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
   }
-    
   // kim
   .price-wrapper {
     display: grid;
     grid-gap: 50px;
-    // grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(281px, 1fr));
                  
   }       
-  // .price-item {
-  //   // border: 1px solid #000;
-  //   border-radius: 0.625em;
-  //   box-shadow: 0px 0.75em 1.5em 0px #0000000f;    
-  //   // margin: 2.188em 0.938em;
-  //   // padding: 10px;    
-  //   padding: 0 1.875em 1.375em 1.875em;
-  //   background-color: #fff;
-  //   text-align: center;
-  // }
   .price-item {
     // border: 1px solid #000;
     border-radius: 0.625em;
@@ -51,23 +30,8 @@
     background-color: #fff;
     text-align: center;
     position: relative; 
-    // position: relative;
-    // animation: mymove2 2s infinite;
     animation-fill-mode: forwards;
   }
-  .price-item__click {
-    position: relative;
-    // animation: mymove2 2s;
-    // animation-duration: 1s;  
-    // animation-timing-function: ease-in-out;
-    // animation-timing-function: ease;
-    // animation-fill-mode: forwards;
-  }
-  @keyframes mymove2 {
-    from {left: 0px;}
-    to {left: 50%;}
-  }
-
 .price-item__img-wrap {
     position: relative;
     padding: 0 0 85% 0;
@@ -99,7 +63,6 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 1.333em;
-    // margin: 0 0 0.367em 0;
   }
   .price-item__work-wrap {
     color: #3e4662;
@@ -142,40 +105,5 @@
     }
   }
  
-  // modal
-  .container {
-    padding: 16px;
-    text-align: center;
-  } 
-  .modal-price {
-    display: none;
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    padding-top: 50px;
-    animation: mymove; 
-    animation-duration: 1s;  
-    // animation-timing-function: ease-in-out;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-  }    
-  @keyframes mymove {
-    from {background-color: transparent;}
-    to {
-       background: linear-gradient(0deg, rgba(35,167,222,0.85) 0%, rgba(35,167,222,0.85) 100%);
-       background: -moz-linear-gradient(0deg, rgba(35,167,222,0.85) 0%, rgba(35,167,222,0.85) 100%);
-    }
-  }
-  .modal-content {
-    // margin: 5% auto 15% auto; 
-    // width: 80%; 
-  }
-  // .bagroundBlue {
-    
-  // }
   // table
   @import 'blocks/price_tables'; 

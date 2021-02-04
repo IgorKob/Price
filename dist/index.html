@@ -9,10 +9,266 @@
     <meta name="author" content="kim">
     <title>Document</title>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="../dist/styles/style.css">
+    <!-- <link rel="stylesheet" href="../dist/styles/style.css"> -->
     <!-- <link rel="stylesheet" href="https://github.com/IgorKob/Price/blob/gh-pages/styles/style.css?raw=true"> -->
     <style>
-    
+      * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+      html {
+        font-size: 13px; }
+
+      .price-section {
+        width: 100%;
+        background-color: #fff; }
+
+      .wrap {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 5.56vw;
+        margin: 0 auto;
+        font-family: 'Open Sans', sans-serif; }
+
+      .price-wrapper {
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(281px, 1fr)); }
+
+      .price-item {
+        border-radius: 0.625em;
+        -webkit-box-shadow: 0px 0.75em 1.5em 0px #0000000f;
+                box-shadow: 0px 0.75em 1.5em 0px #0000000f;
+        padding: 0 1.875em 1.375em 1.875em;
+        background-color: #fff;
+        text-align: center;
+        position: relative;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards; }
+
+      .price-item__img-wrap {
+        position: relative;
+        padding: 0 0 85% 0; }
+
+      .price-item__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60%;
+        -o-object-fit: contain;
+          object-fit: contain; }
+
+      .price-item__title {
+        text-align: center;
+        color: #13182a;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.333em;
+        margin: 0;
+        white-space: nowrap; }
+
+      .price-item__value {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #13182a;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.333em; }
+
+      .price-item__work-wrap {
+        color: #3e4662;
+        font-size: 1.125em;
+        display: grid;
+        grid-template-columns: auto auto;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        border-bottom: 2px solid rgba(62, 70, 98, 0.7);
+        white-space: nowrap;
+        margin-bottom: 15px; }
+
+      .price-item__materials-wrap {
+        color: #3e4662;
+        font-size: 1.125em;
+        display: grid;
+        grid-template-columns: auto auto;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        border-bottom: 2px solid rgba(62, 70, 98, 0.7);
+        margin-bottom: 15px; }
+
+      .price-item__btn {
+        display: inline-block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0.813em 1.625em;
+        background: #23a7de;
+        border: 2px solid #23a7de;
+        border-radius: 0.625em;
+        text-decoration: none;
+        margin: 0 auto;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+        .price-item__btn:hover {
+          color: #23a7de;
+          background: #fff;
+          border: 2px solid #23a7de; }
+
+      .modal-price {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        padding-top: 50px;
+        -webkit-animation: mymove;
+                animation: mymove;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards; }
+
+      @-webkit-keyframes mymove {
+        from {
+          background-color: transparent; }
+        to {
+          background: -webkit-gradient(linear, left bottom, left top, from(rgba(35, 167, 222, 0.85)), to(rgba(35, 167, 222, 0.85)));
+          background: -webkit-linear-gradient(bottom, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%);
+          background: linear-gradient(0deg, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%);
+          background: -moz-linear-gradient(0deg, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%); } }
+
+      @keyframes mymove {
+        from {
+          background-color: transparent; }
+        to {
+          background: -webkit-gradient(linear, left bottom, left top, from(rgba(35, 167, 222, 0.85)), to(rgba(35, 167, 222, 0.85)));
+          background: -webkit-linear-gradient(bottom, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%);
+          background: -o-linear-gradient(bottom, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%);
+          background: linear-gradient(0deg, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%);
+          background: -moz-linear-gradient(0deg, rgba(35, 167, 222, 0.85) 0%, rgba(35, 167, 222, 0.85) 100%); } }
+
+      .modal-table {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        padding-top: 50px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+        -webkit-animation-name: zoom;
+                animation-name: zoom;
+        -webkit-animation-duration: .8s;
+                animation-duration: .8s;
+        -webkit-animation-delay: .8s;
+                animation-delay: .8s;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards; }
+
+      @-webkit-keyframes zoom {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0); }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+
+      @keyframes zoom {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0); }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+
+      .price-table__wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+        border-radius: 30px;
+        padding: 10px;
+        background-color: #fff;
+        position: relative;
+        -webkit-box-shadow: 0px 0.75em 1.5em 0px #0000000f;
+                box-shadow: 0px 0.75em 1.5em 0px #0000000f;
+        border-bottom: 2px solid rgba(62, 70, 98, 0.7); }
+
+      .price-table__close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #000; }
+        .price-table__close:hover {
+          color: #f44336;
+          cursor: pointer; }
+
+      .price-table__items-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 60px;
+        margin-bottom: 30px; }
+
+      .price-table__title {
+        color: #13182a;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.333em;
+        margin: 0;
+        margin-left: 10px;
+        white-space: nowrap; }
+
+      .price-table__table {
+        border-collapse: collapse;
+        width: 100%; }
+        .price-table__table caption {
+          text-align: start; }
+        .price-table__table td, .price-table__table th {
+          border: 1px solid #dddddd;
+          text-align: center;
+          padding: 3px;
+          color: #3e4662;
+          font-size: 1.125em;
+          white-space: nowrap; }
+        .price-table__table th {
+          color: #ccc;
+          background-color: #000;
+          text-align: center; }
+        .price-table__table tfoot {
+          background-color: #ccc; }
+
+      td.price-table__title2 {
+        text-align: left; }
+
+      .price-table__work-wrap td:first-child {
+        text-align: left; }
+
+      .price-table__materials-wrap {
+        margin-top: 5px; }
+
+      .price-item__btn {
+        cursor: pointer; }
+
     </style>
   </head>
   <body>
@@ -20,8 +276,10 @@
 <section class="price-section">
   <div class="wrap">
 
+    <div>test</div>
+
     <div class="price-wrapper">
-      <div id='train1' class="price-item">
+      <div class="price-item">
         <div class="price-item__img-wrap">
           <img class="price-item__img" src='https://github.com/IgorKob/Price/blob/gh-pages/assets/img/kv1.jpg?raw=true' alt='kv'/>
         </div>
@@ -29,8 +287,7 @@
         <div class="price-item__value">22 219 ₴</div>
         <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>5790</div></div>
         <div class="price-item__materials-wrap"><div>Матеріали</div><div>16429</div></div>
-        <!-- <button class="price-item__btn" onclick="onclick_btn()">Детальніше</button> -->
-        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
+        <a class="price-item__btn">Детальніше</a>
       </div> 
       <div class="price-item">
         <div class="price-item__img-wrap">
@@ -40,132 +297,296 @@
         <div class="price-item__value">27 018 ₴</div>
         <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>8600</div></div>
         <div class="price-item__materials-wrap"><div>Матеріали</div><div>18418</div></div>
-        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
+        <a class="price-item__btn">Детальніше</a>
       </div>
-      <div id='train3' class="price-item">      
+      <div class="price-item">      
         <div class="price-item__img-wrap">
           <img class="price-item__img" src='https://github.com/IgorKob/Price/blob/gh-pages/assets/img/kv3.jpg?raw=true' alt='kv'/>
         </div>      
-        <h3 id='train' class="price-item__title">Трикімнатна квартира</h3>
+        <h3 class="price-item__title">Трикімнатна квартира</h3>
         <div class="price-item__value">32 287 ₴</div>
         <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>11880</div></div>
         <div class="price-item__materials-wrap"><div>Матеріали</div><div>20407</div></div>
-        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
+        <a class="price-item__btn">Детальніше</a>
       </div>
     </div>
         
-
-    <!-- <div class="bagroundBlue">test</div> -->
     <div>test</div>
       
+
+
+
+
+
+
     <div id="modal-price" class="modal-price">
-      <div id="modal-content" class="modal-content"></div>
-    </div>
 
+      <div id="modal-table" class="modal-table">
 
-    <!-- <div id="modal-price0"> -->
-      <!-- <div id="modal-content" class="modal-content"></div> -->
-    </div>
-    <!-- <div id="modal-price00"> -->
-      <!-- <div id="modal-content" class="modal-content"></div> -->
-    <!-- </div> -->
+        <div class="price-table__wrap">
+        
+          <span onclick="document.getElementById('modal-table').style.display='none'" class="price-table__close" title="Close Modal">×</span>
+          
+          <div class="price-table__items-wrap">
 
+            <div class="price-table__work-wrap">
+              <table class="price-table__table">
+                <caption class="price-table__title">Монтажні роботи</caption>
+                <thead>
+                  <tr> 
+                    <td class="price-table__title2" colspan="4">Однокімнатна квартира</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Назва роботи</th>
+                    <th>Ціна (грн.)</th>
+                    <th>Кіль-ть</th>
+                    <th>Сума (грн.)</th>
+                  </tr>
+                  <tr>
+                    <td>Монтаж установочної коробки, подрозетника в бетоні</td>
+                    <td>60</td>
+                    <td>20</td>
+                    <td>1200</td>
+                  </tr>
+                  <tr>
+                    <td>Установка механізму резетки</td>
+                    <td>30</td>
+                    <td>20</td>
+                    <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Установка автоматичного вимикача (ПЗВ)</td>
+                    <td>60</td>
+                    <td>4</td>
+                    <td>240</td>
+                  </tr>
+                  <tr>
+                    <td>Установка світильника настінного, бра</td>
+                    <td>120</td>
+                    <td>2</td>
+                    <td>240</td>
+                  </tr>
+                  <tr>
+                    <td>Установка підвісного світильника, люстри з кріпленням до стелі</td>
+                    <td>250</td>
+                    <td>2</td>
+                    <td>500</td>
+                  </tr>
+                  <tr>
+                    <td>Установка підвісного світильника, люстри з кріпленням до стелі</td>
+                    <td>250</td>
+                    <td>2</td>
+                    <td>500</td>
+                  </tr>
+                  <tr>
+                    <td>Штроблення стіни бетон, м</td>
+                    <td>80</td>
+                    <td>20</td>
+                    <td>1600</td>
+                  </tr>
+                  <tr>
+                    <td>Установка електропроводки в готовому каналі (штрабі), м</td>
+                    <td>9</td>
+                    <td>20</td>
+                    <td>180</td>
+                  </tr>
+                  <tr>
+                    <td>Установка електропроводки в гофрі, м</td>
+                    <td>16</td>
+                    <td>30</td>
+                    <td>480</td>
+                  </tr>
+                  <tr>
+                    <td>Монтажні матеріали (дюбель, стяжка, ізолента, і т.д.)</td>
+                    <td>100</td>
+                    <td>2</td>
+                    <td>200</td>
+                  </tr>
+                  <tr>
+                    <td>Установка електричного щитка до 12 автоматів накладного</td>
+                    <td>350</td>
+                    <td>1</td>
+                    <td>350</td>
+                  </tr>
+                  <tr>
+                    <td>Транспортні витрати</td>
+                    <td>100</td>
+                    <td>2</td>
+                    <td>200</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" style="text-align:end">ціна від</td>
+                    <td>5790</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+   
+            <div class="price-table__materials-wrap">
+              <table class="price-table__table">
+                <caption class="price-table__title">Матеріали</caption>
+                <thead>
+                  <tr> 
+                    <td class="price-table__title2" colspan="7">Однокімнатна квартира</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Назва</th>
+                    <th>Виробник</th>
+                    <th>Кіль-ть</th>
+                    <th>Ціна (грн.)</th>
+                    <th>Ціна (грн.)</th>
+                    <th>Сума (грн.)</th>
+                    <th>Сума (грн.)</th>
+                  </tr>
+                  <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>23</td>
+                    <td>43</td>
+                    <td>43</td>
+                    <td>23</td>
+                    <td>43</td>
+                    <td>43</td>
+                  </tr>
+                  <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>23</td>
+                    <td>34</td>
+                    <td>34</td>
+                    <td>23</td>
+                    <td>43</td>
+                    <td>43</td>
+                  </tr>
+                  <tr>
+                    <td>Ernst Handel</td>
+                    <td>34</td>
+                    <td>34</td>
+                    <td>23</td>
+                    <td>43</td>
+                    <td>43</td>
+                    <td>34</td>
+                  </tr>
+                </tbody>
 
-    <div id="modal-table" class="modal-table">
-
-      <div class="price-table__wrap">
+                <!-- footer -->
+                <tfoot>
+                  <tr>
+                    <td colspan="3" style="text-align:end">ціна від</td>
+                    <td>5790</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          
+          <button id="price-table-btn" class="price-item__btn">Замовити консультацию</button>
       
-        <span onclick="document.getElementById('modal-table').style.display='none'" class="price-table__close" title="Close Modal">×</span>
-        
-        <div class="price-table__items-wrap">
-          <div class="price-table__work-wrap">
-            <h3>Монтажні роботи</h3>
-            <table>
-              <caption>Однокімнатна квартира</caption>
-              <tr>
-                <th>Назва роботи</th>
-                <th>Ціна (грн.)</th>
-                <th>Кіль-ть</th>
-                <th>Сума (грн.)</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>23</td>
-                <td>43</td>
-                <td>43</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>23</td>
-                <td>34</td>
-                <td>34</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>34</td>
-                <td>34</td>
-                <td>34</td>
-              </tr>
-            </table>
-          </div>
-
-          <div class="price-table__materials-wrap">
-            <h3>Матеріали</h3>
-            <table>
-              <caption>Однокімнатна квартира</caption>
-              <tr>
-                <th>Назва</th>
-                <th>Виробник</th>
-                <th>Кіль-ть</th>
-                <th>Ціна (грн.)</th>
-                <th>Ціна (грн.)</th>
-                <th>Сума (грн.)</th>
-                <th>Сума (грн.)</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>23</td>
-                <td>43</td>
-                <td>43</td>
-                <td>23</td>
-                <td>43</td>
-                <td>43</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>23</td>
-                <td>34</td>
-                <td>34</td>
-                <td>23</td>
-                <td>43</td>
-                <td>43</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>34</td>
-                <td>34</td>
-                <td>23</td>
-                <td>43</td>
-                <td>43</td>
-                <td>34</td>
-              </tr>
-            </table>
-          </div>
         </div>
-        
-        <button id="price-table-btn" class="price-item__btn">Замовити консультацию</button>
-    
       </div>
+<!-- //table -->
+
     </div>
+<!-- //modal -->
+
+
 
   </div>
 </section>
 
-    <script src="./dist/js/main.js"></script>
+    <!-- <script src="./dist/js/main.js"></script> -->
     <!-- <script src="https://github.com/IgorKob/Price/blob/gh-pages/js/main.js?raw=true"></script> -->
-    <!-- <script>
+    <script>
+      const price_btn = document.getElementsByClassName('price-item__btn');
+      const price_items = document.getElementsByClassName('price-item');
+      const modal_price = document.getElementById('modal-price');
+      const modal_price0 = document.getElementById('modal-price0');
+      const modal_content = document.getElementById('modal-content');
+      const modal_table = document.getElementById('modal-table');
+      const price_table_btn = document.getElementById('price-table-btn');
 
-    </script> -->
+      const train = document.getElementById('train');
+
+      window.addEventListener('click', function(event) {
+        if (event.target == modal_price) {
+          // modal_content.innerHTML = '';
+          // modal_price.style.display = "none";
+        }
+      }) 
+
+      price_table_btn.addEventListener('click', function(event) {
+          alert('Send message')
+      })
+
+      // for (let i = 0; i < price_btn.length; i++) {
+      //     price_btn[i].addEventListener('click', function(event) {
+      //         // debugger
+      //   // const el_x = this.getBoundingClientRect().left;
+      //   // const el_x = this.parentNode.getBoundingClientRect().left;
+        
+      //   // console.log(el_x);
+
+      //         if ( modal_price.style.display === "block") {
+      //             // modal_content.innerHTML = '';
+      //             // modal_price.style.display = "none";
+      //             // modal_table.style.display = "none";
+      //             // return;
+      //         }
+      //         if ( modal_price.style.display === "none" || modal_price.style.display === "") {
+      //             // const price_item = price_btn[i].parentNode;
+      //             // const el = price_item.cloneNode(true);
+      //             // modal_price.style.display = "block";
+      //             // modal_content.appendChild(el);
+      //             // return;
+      //         }
+      //     }) 
+      //   }  
+      
+      function onclick_btn() {
+        if ( modal_price.style.display === "block") {
+          // modal_table.style.display = "block";
+        }
+      }
+
+      // /////////////////////
+      for (let i = 0; i < price_btn.length; i++) {
+        price_btn[i].addEventListener('click', function(event) {
+          const el = this.parentNode;
+          const el2 = el.cloneNode(true);
+          price_items[0].parentNode.appendChild(el2);
+        
+          const el_top = el.getBoundingClientRect().top;
+          const el_x = el.getBoundingClientRect().left;
+
+          modal_price.style.display = "block";
+        
+          el2.animate([
+            { left: `${el_x}px`, top: `${el_top}px`}, 
+            { position: 'fixed', left: `50%`, top: `50%`, transform: 'translate(-50%, -50%)', opacity: '.8'}
+          ], {
+            duration: 800,
+          })
+          // this.parentNode.style.position = "fixed";
+          // this.parentNode.style.zIndex = "11";
+          // this.parentNode.style.display = "none";
+          el.style.opacity = "0";
+        
+          el2.style.position = "fixed";
+          el2.style.zIndex = "11";
+
+          const id = setInterval(() => {
+            el2.style.display = "none";
+            // modal_table.style.display = "block";
+            // modal_table.classList.toggle('modal-table__block');  
+          }, 800);
+          // clearInterval(id);
+        })
+      }
+    </script>
 
   </body>
 </html>
