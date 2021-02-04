@@ -212,7 +212,7 @@ function fonts() {
 //     .pipe(ghPages());
 // });
 function deploy() {
-  return gulp.src('./build/**/*')
+  return gulp.src('./dist/**/*')
   .pipe(ghPages());
 }
 

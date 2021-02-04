@@ -8,131 +8,164 @@
     <meta name="keywords" content="">
     <meta name="author" content="kim">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="../dist/styles/style.css">
+    <!-- <link rel="stylesheet" href="https://github.com/IgorKob/Price/blob/gh-pages/styles/style.css?raw=true"> -->
+    <style>
+    
+    </style>
   </head>
   <body>
 
-<section class="price-wrapper">
-  <div class="price-item">
-    <img class="price-item__img" src='./dist/assets/img/kv1.jpg' alt='kv'/>
-    <h3 class="price-item__title">Однокімнатна квартира</h3>
-    <div class="price-item__value">22 219$</div>
-    <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>5790</div></div>
-    <div class="price-item__materials-wrap"><div>Матеріали</div><div>16429</div></div>
-    <button class="price-item__btn" onclick="onclick_btn()">Детальніше</button>
-  </div>
-  <div class="price-item">
-    <img class="price-item__img" src='./dist/assets/img/kv2.jpg' alt='kv'/>
-    <h3 class="price-item__title">Двокімнітна квартира</h3>
-    <div class="price-item__value">22 219$</div>
-    <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>5790</div></div>
-    <div class="price-item__materials-wrap"><div>Матеріали</div><div>16429</div></div>
-    <button class="price-item__btn" onclick="onclick_btn()">Детальніше</button>
-  </div>
-  <div class="price-item">
-    <img class="price-item__img" src='./dist/assets/img/kv3.jpg' alt='kv'/>
-    <h3 class="price-item__title">Трикімнатна квартира</h3>
-    <div class="price-item__value">22 219$</div>
-    <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>5790</div></div>
-    <div class="price-item__materials-wrap"><div>Матеріали</div><div>16429</div></div>
-    <button class="price-item__btn" onclick="onclick_btn()">Детальніше</button>
-  </div>
-</section>
-   
-  
-<div id="modal-price" class="modal-price">
-  <div id="modal-content" class="modal-content"></div>
-</div>
+<section class="price-section">
+  <div class="wrap">
 
-<div id="modal-table" class="modal-table">
-
-  <div class="price-table__wrap">
-  
-    <span onclick="document.getElementById('modal-table').style.display='none'" class="price-table__close" title="Close Modal">×</span>
-    
-    <div class="price-table__items-wrap">
-      <div class="price-table__work-wrap">
-        <h3>Монтажні роботи</h3>
-        <table>
-          <caption>Однокімнатна квартира</caption>
-          <tr>
-            <th>Назва роботи</th>
-            <th>Ціна (грн.)</th>
-            <th>Кіль-ть</th>
-            <th>Сума (грн.)</th>
-          </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>23</td>
-            <td>43</td>
-            <td>43</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>23</td>
-            <td>34</td>
-            <td>34</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>34</td>
-            <td>34</td>
-            <td>34</td>
-          </tr>
-        </table>
+    <div class="price-wrapper">
+      <div id='train1' class="price-item">
+        <div class="price-item__img-wrap">
+          <img class="price-item__img" src='https://github.com/IgorKob/Price/blob/gh-pages/assets/img/kv1.jpg?raw=true' alt='kv'/>
+        </div>
+        <h3 class="price-item__title">Однокімнатна квартира</h3>
+        <div class="price-item__value">22 219 ₴</div>
+        <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>5790</div></div>
+        <div class="price-item__materials-wrap"><div>Матеріали</div><div>16429</div></div>
+        <!-- <button class="price-item__btn" onclick="onclick_btn()">Детальніше</button> -->
+        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
+      </div> 
+      <div class="price-item">
+        <div class="price-item__img-wrap">
+          <img class="price-item__img" src='https://github.com/IgorKob/Price/blob/gh-pages/assets/img/kv2.jpg?raw=true' alt='kv'/>
+        </div>
+        <h3 class="price-item__title">Двокімнатна квартира</h3>
+        <div class="price-item__value">27 018 ₴</div>
+        <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>8600</div></div>
+        <div class="price-item__materials-wrap"><div>Матеріали</div><div>18418</div></div>
+        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
       </div>
-
-      <div class="price-table__materials-wrap">
-        <h3>Матеріали</h3>
-        <table>
-          <caption>Однокімнатна квартира</caption>
-          <tr>
-            <th>Назва</th>
-            <th>Виробник</th>
-            <th>Кіль-ть</th>
-            <th>Ціна (грн.)</th>
-            <th>Ціна (грн.)</th>
-            <th>Сума (грн.)</th>
-            <th>Сума (грн.)</th>
-          </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>23</td>
-            <td>43</td>
-            <td>43</td>
-            <td>23</td>
-            <td>43</td>
-            <td>43</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>23</td>
-            <td>34</td>
-            <td>34</td>
-            <td>23</td>
-            <td>43</td>
-            <td>43</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>34</td>
-            <td>34</td>
-            <td>23</td>
-            <td>43</td>
-            <td>43</td>
-            <td>34</td>
-          </tr>
-        </table>
+      <div id='train3' class="price-item">      
+        <div class="price-item__img-wrap">
+          <img class="price-item__img" src='https://github.com/IgorKob/Price/blob/gh-pages/assets/img/kv3.jpg?raw=true' alt='kv'/>
+        </div>      
+        <h3 id='train' class="price-item__title">Трикімнатна квартира</h3>
+        <div class="price-item__value">32 287 ₴</div>
+        <div class="price-item__work-wrap"><div>Монтажні роботи</div><div>11880</div></div>
+        <div class="price-item__materials-wrap"><div>Матеріали</div><div>20407</div></div>
+        <a class="price-item__btn" onclick="onclick_btn()">Детальніше</a>
       </div>
     </div>
-    
-    <button id="price-table-btn" class="price-item__btn">Замовити консультацию</button>
- 
-  </div>
-</div>
+        
 
+    <!-- <div class="bagroundBlue">test</div> -->
+    <div>test</div>
+      
+    <div id="modal-price" class="modal-price">
+      <div id="modal-content" class="modal-content"></div>
+    </div>
+
+
+    <!-- <div id="modal-price0"> -->
+      <!-- <div id="modal-content" class="modal-content"></div> -->
+    </div>
+    <!-- <div id="modal-price00"> -->
+      <!-- <div id="modal-content" class="modal-content"></div> -->
+    <!-- </div> -->
+
+
+    <div id="modal-table" class="modal-table">
+
+      <div class="price-table__wrap">
+      
+        <span onclick="document.getElementById('modal-table').style.display='none'" class="price-table__close" title="Close Modal">×</span>
+        
+        <div class="price-table__items-wrap">
+          <div class="price-table__work-wrap">
+            <h3>Монтажні роботи</h3>
+            <table>
+              <caption>Однокімнатна квартира</caption>
+              <tr>
+                <th>Назва роботи</th>
+                <th>Ціна (грн.)</th>
+                <th>Кіль-ть</th>
+                <th>Сума (грн.)</th>
+              </tr>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>23</td>
+                <td>43</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>23</td>
+                <td>34</td>
+                <td>34</td>
+              </tr>
+              <tr>
+                <td>Ernst Handel</td>
+                <td>34</td>
+                <td>34</td>
+                <td>34</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="price-table__materials-wrap">
+            <h3>Матеріали</h3>
+            <table>
+              <caption>Однокімнатна квартира</caption>
+              <tr>
+                <th>Назва</th>
+                <th>Виробник</th>
+                <th>Кіль-ть</th>
+                <th>Ціна (грн.)</th>
+                <th>Ціна (грн.)</th>
+                <th>Сума (грн.)</th>
+                <th>Сума (грн.)</th>
+              </tr>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>23</td>
+                <td>43</td>
+                <td>43</td>
+                <td>23</td>
+                <td>43</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>23</td>
+                <td>34</td>
+                <td>34</td>
+                <td>23</td>
+                <td>43</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>Ernst Handel</td>
+                <td>34</td>
+                <td>34</td>
+                <td>23</td>
+                <td>43</td>
+                <td>43</td>
+                <td>34</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <button id="price-table-btn" class="price-item__btn">Замовити консультацию</button>
+    
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <script src="./dist/js/main.js"></script>
+    <!-- <script src="https://github.com/IgorKob/Price/blob/gh-pages/js/main.js?raw=true"></script> -->
+    <!-- <script>
+
+    </script> -->
+
   </body>
 </html>
